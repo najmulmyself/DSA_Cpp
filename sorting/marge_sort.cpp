@@ -35,7 +35,8 @@ vector<int> merge_sort(vector<int>a){
     int idx2 = 0;
     //need to check corner case first bcz array range error will be occure;
 
-    if(idx1 == sorted_b.size()){
+    for(int i =0;i<a.size();i++){
+        if(idx1 == sorted_b.size()){
         sorted_a.push_back(sorted_c[idx2]);
         idx2++;
     }
@@ -50,6 +51,8 @@ vector<int> merge_sort(vector<int>a){
     else{
         sorted_a.push_back(sorted_c[idx2]);
         idx2++;
+    }
+    
     }
 
     return sorted_a;
