@@ -52,7 +52,7 @@ vector<int> merge_sort(vector<int>a){
         sorted_a.push_back(sorted_c[idx2]);
         idx2++;
     }
-    
+
     }
 
     return sorted_a;
@@ -60,7 +60,7 @@ vector<int> merge_sort(vector<int>a){
 }
 
 int main(){
-    vector<int> a = {5,3,6,6,7,2};
+    vector<int> a = {993,415,900,472,369,733,420,637};
     vector<int> ans = merge_sort(a);
     for(int i = 0;i<ans.size();i++){
         cout<<ans[i]<< " ";
