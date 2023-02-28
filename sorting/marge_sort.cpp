@@ -30,14 +30,39 @@ vector<int> merge_sort(vector<int>a){
 
     vector<int> sorted_a;
     // / sort two array into one which are already sorted;
-    
+
     int idx1 = 0;
     int idx2 = 0;
+    //need to check corner case first bcz array range error will be occure;
 
+    if(idx1 == sorted_b.size()){
+        sorted_a.push_back(sorted_c[idx2]);
+        idx2++;
+    }
+    else if(idx2 == sorted_c.size()){
+        sorted_a.push_back(sorted_b[idx1]);
+        idx1++;  
+    }
+    else if(sorted_b[idx1] < sorted_c[idx2]){
+        sorted_a.push_back(sorted_b[idx1]);
+        idx1++;
+    }
+    else{
+        sorted_a.push_back(sorted_c[idx2]);
+        idx2++;
+    }
+
+    return sorted_a;
 
 }
 
 int main(){
+    vector<int> a = {5,3,6,6,7,2};
+    vector<int> ans = merge_sort(a);
+    for(int i = 0;i<ans.size();i++){
+        cout<<ans[i]<< " ";
+    }
 
+    return 0;
 }
   
