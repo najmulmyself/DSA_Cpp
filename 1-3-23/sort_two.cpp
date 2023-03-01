@@ -17,33 +17,43 @@ int main(){
         b1.push_back(inp);
     }
     vector<int> ans;
+    int idx1 = 0;
+    int idx2 = 0;
     if(a>b){
-        for(int i =0;i<a;i++){
-            if(i == a1.size()){
-                ans.push_back(b1[i]);
+        for(int i =0;i<a+b;i++){
+            if(idx1 == a1.size()){
+                ans.push_back(b1[idx2]);
+                idx2++;
             }
-            else if (i == b1.size()){
-                ans.push_back(a1[i]);
+            else if (idx2 == b1.size()){
+                ans.push_back(a1[idx1]);
+                idx1++;
             }
-            else if(a1[i]>b1[i]){
-                ans.push_back(a1[i]);
+            else if(a1[idx1]>b1[idx2]){
+                ans.push_back(a1[idx1]);
+                idx1++;
             }else{
-                ans.push_back(b1[i]);
-
+                ans.push_back(b1[idx2]);
+                idx2++;
             }
         }
     }else{
-         for(int i =0;i<b;i++){
-            if(i == a1.size()){
-                ans.push_back(b1[i]);
+         for(int i =0;i<b+a;i++){
+            if(idx1 == a1.size()){
+                ans.push_back(b1[idx2]);
+                idx2++;
+
             }
-            else if (i == b1.size()){
-                ans.push_back(a1[i]);
+            else if (idx2 == b1.size()){
+                ans.push_back(a1[idx1]);
+                idx1++;
             }
-            else if(a1[i]<b1[i]){
-                ans.push_back(b1[i]);
+            else if(a1[idx1]<b1[idx2]){
+                ans.push_back(b1[idx2]);
+                idx2++;
             }else{
-                ans.push_back(a1[i]);
+                ans.push_back(a1[idx1]);
+                idx1++;
 
             }
         }
