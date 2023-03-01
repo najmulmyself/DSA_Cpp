@@ -24,20 +24,20 @@ vector<int> merge(vector<int>a){
     vector<int> ans ;
 
     for(int i =0;i<a.size();i++){
-        if(idx1 == b.size()){
-            ans.push_back(c[idx2]);
+        if(idx1 == sorted_b.size()){
+            ans.push_back(sorted_c[idx2]);
             idx2++;
         }
-        else if(idx2 == c.size()){
-            ans.push_back(b[idx1]);
+        else if(idx2 == sorted_c.size()){
+            ans.push_back(sorted_b[idx1]);
             idx1++;
         }
-        else if(b[idx1]<c[idx2]){
-            ans.push_back(b[idx1]);
+        else if(sorted_b[idx1]<sorted_c[idx2]){
+            ans.push_back(sorted_b[idx1]);
             idx1++;
         }
         else{
-            ans.push_back(c[idx2]);
+            ans.push_back(sorted_c[idx2]);
             idx2++;
         }
     }
