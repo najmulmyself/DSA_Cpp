@@ -46,7 +46,7 @@ vector<int> quick_sort(vector<int> a)
 int main()
 {
 
-    vector<int> a = {6, 2, 5, 3, 2, 1};
+    vector<int> a = {6, 2, 3, 3, 5};
     vector<int> sorted_a = quick_sort(a);
 
     for (int i = 0; i < sorted_a.size(); i++)
