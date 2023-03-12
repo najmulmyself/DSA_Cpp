@@ -16,10 +16,10 @@ vector<int> quick_sort(vector<int> a)
         if(i == pivot){
             continue;
         }
-        else if(a[i]<pivot){
-            b.push_back(a[i]);
-        }else{
+        else if(a[i]<a[pivot]){
             c.push_back(a[i]);
+        }else{
+            b.push_back(a[i]);
         }
     }
 
@@ -47,7 +47,15 @@ vector<int> quick_sort(vector<int> a)
 
 int main()
 {
-    vector<int> a = {6, 2, 3, 3, 5};
+    int n;
+    vector<int> a;
+    cin>>n;
+    
+    for(int i = 0;i<n;i++){
+        int temp ;
+        cin>>temp;
+        a.push_back(temp);
+    }
     vector<int> ans = quick_sort(a);
     for (int i = 0; i < ans.size(); i++)
     {

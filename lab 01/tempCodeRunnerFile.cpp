@@ -1,2 +1,4 @@
-    int idx1 = 0;
-    int idx2 = 0;
+ // for (int i = 0; i < distinctEl.size(); i++)
+    // {
+    //     cout << distinctEl[i] << " ";
+    // }
