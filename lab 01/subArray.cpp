@@ -52,9 +52,7 @@ vector<int> merge_sort(vector<int> a)
             idx2++;
         }
     }
-    // for(int i =0;i<ans.size();i++){
-    //     if()
-    // }
+
 
     return ans;
 }
@@ -72,19 +70,10 @@ vector<int> removeDuplicates(vector<int> a)
     {
         if (a[i] != a[i + 1])
         {
-            // newArr[j] = a[i];
             newArr.push_back(a[i]);
-            // j++;
         }
     }
 
-    // newArr[newArr.size()] = a[a.size()-1];
-    // newArr.push_back(a[a.size() - 1]);
-    //   ///////////////////////////////////////
-    // newArr[j++] = a[a.size()];
-
-    // for (int i = 0; i < j; i++)
-    // 	arr[i] = temp[i];
 
     return newArr;
 }
@@ -137,9 +126,5 @@ int main()
     {
         cout << "NO";
     }
-    // for (int i = 0; i < distinctEl.size(); i++)
-    // {
-    //     cout << distinctEl[i] << " ";
-    // }
     return 0;
 }
