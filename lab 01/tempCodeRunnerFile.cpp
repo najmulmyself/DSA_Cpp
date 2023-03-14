@@ -1,4 +1,3 @@
- // for (int i = 0; i < distinctEl.size(); i++)
-    // {
-    //     cout << distinctEl[i] << " ";
+    // for(int i = 0;i<ans.size();i++){
+    //     cout<<ans[i]<< " ";
     // }
