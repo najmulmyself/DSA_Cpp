@@ -49,15 +49,50 @@ class LinkedList{
         
     }
     int getSize(){
+        int count = 0;
+        node * a = head;
+        while(a != NULL){
+            count++;
+            a = a->nxt;
+        }
+        return count;
 
     }
     int getValue(int v){
+        int count =0;
+        node * a = head;
+        while (a != NULL){
+            if(count == v){
+                return a->data;
+            }
+            count++;
+            a = a->nxt;
+
+        }
+        return -1;
 
     }
     void printReverse(){
+        // node * a = head;
+        // while (a != NULL)       
+        // {   a = a->nxt;
+        //     printReverse();
+        // }
+        // cout<<a->data<<" ";
+        
 
     }
     void swapFirst(){
+        node *a =head;
+        node * first  = a ;
+        node * second = a->nxt;
+
+        int temp = first->data;
+        first->data = second->data;
+        second->data= temp;
+
+        // Traverse();
+
 
     }
 
