@@ -32,11 +32,9 @@ class LinkedList{
         // if head is not null, that means head points already a node;
         // then: we need to point next node as previously pointed head;
         // then points head as newly added node which is a;
-        a->nxt = head; // this line pointing previous node/head as nxt
-        head = a; // now we can point newly added node as head
-        
+        a->nxt = head; 
+        head = a;
     }
-
     void Traverse(){
         // let's refer something/node as head
         node * a = head;
@@ -50,24 +48,41 @@ class LinkedList{
         cout<<"\n";
         
     }
+    int getSize(){
+
+    }
+    int getValue(int v){
+
+    }
+    void printReverse(){
+
+    }
+    void swapFirst(){
+
+    }
+
 };
-
-
-
 int main(){
 
     LinkedList l;
-
-    l.InsertAtHead(10);
-    l.Traverse();
+    cout<<l.getSize()<<"\n";
+    l.InsertAtHead(5);
+    cout<<l.getSize()<<"\n";
     l.InsertAtHead(6);
+    l.InsertAtHead(30);
+    cout<<l.getSize()<<"\n";
+    l.InsertAtHead(20);
+    l.InsertAtHead(30);
+
+    cout<<l.getValue(2)<<"\n";
+
+    cout<<l.getValue(6)<<"\n";
+
+    l.printReverse();
     l.Traverse();
-    l.InsertAtHead(50);
+    l.swapFirst();
     l.Traverse();
-    l.InsertAtHead(66);
-    l.Traverse();
-    l.InsertAtHead(12);
-    l.Traverse();
+    l.printReverse();
 
 return 0;
 }
