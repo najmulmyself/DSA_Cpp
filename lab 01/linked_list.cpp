@@ -74,17 +74,14 @@ public:
         }
         return -1;
     }
-
-    node *a = head;
-    void printReverse()
+    void printReverse(node *a)
     {
-        // if (a == NULL)
-        // {
-        //     return;
-        // }
-        //     a = a->nxt;
-        //     cout << a->data << " ";
-        //     printReverse();
+        if (a == NULL)
+        {
+            return;
+        }
+        printReverse(a->nxt);
+        cout << a->data << " ";
     }
     void swapFirst()
     {
@@ -115,12 +112,13 @@ int main()
     cout << l.getValue(2) << "\n";
 
     cout << l.getValue(6) << "\n";
-
-    l.printReverse();
+    node *a = l.head;
+    l.printReverse(a);
+    cout<<"\n";
     l.Traverse();
     l.swapFirst();
     l.Traverse();
-    l.printReverse();
+    l.printReverse(a);
 
     return 0;
 }
