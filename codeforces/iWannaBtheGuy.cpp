@@ -16,6 +16,7 @@ vector<int> margeVector(int n,vector<int> x,vector<int>y){
 }
 
 
+
 vector<int> merge_sort(vector<int>a){
     //base case
 
@@ -108,7 +109,7 @@ int main(){
         cin>>temp;
         x.push_back(temp);
     }
-    for(int i =0;i<n-1;i++){
+    for(int i =0;i<n;i++){
         int temp;
         cin>>temp;
         y.push_back(temp);
@@ -138,4 +139,4 @@ int main(){
 }
 
 
-///
+//////////////////////////UNFINISHED/////////////////////////////////
