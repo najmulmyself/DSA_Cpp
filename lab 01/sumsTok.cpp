@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+///////////////////////UNFINISHED///////////////////////////////////
 vector<int> merge_sort(vector<int> a, int k)
 {
     // base case
@@ -57,24 +57,10 @@ vector<int> merge_sort(vector<int> a, int k)
 
     int left = 0, count = 0;
     int right = sorted_a.size() - 1;
-    // for(int i=0;i<sorted_a.size();i++){
-    //     if((right-left)==1){
-    //         cout<<count;
-    //         break;
-    //     }
 
-    //     //1 2 3 4 6
-
-    //     // else{
-    //     //     // left++;
-    //     //     right--;
-    //     // }
-
-    // }
 
     while (left < right)
     {
-        // cout<<"loop activate"<<endl;
         if (sorted_a[left] >= k)
         {
             left++;
@@ -102,12 +88,9 @@ vector<int> merge_sort(vector<int> a, int k)
 
 int main()
 {
-    // vector<int> a = {6, 1, 3, 2, 4};
     vector<int> a = {6, 1, 3,9,8, 2, 4};
     vector<int> ans = merge_sort(a, 10);
-    // for(int i = 0;i<ans.size();i++){
-    //     cout<<ans[i]<< " ";
-    // }
+
 
     return 0;
 }
