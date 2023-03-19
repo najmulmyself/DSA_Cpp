@@ -119,7 +119,7 @@ int main()
         cin >> temp;
         x.push_back(temp);
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n -1; i++)
     {
         int temp;
         cin >> temp;
@@ -130,9 +130,9 @@ int main()
     vector<int> sortedArr = merge_sort(finalMarge);
     vector<int> result = removeDuplicates(sortedArr);
 
-    // for(int i =0;i<result.size();i++){
-    //     cout<<result[i];
-    // }
+    for(int i =0;i<result.size();i++){
+        cout<<result[i];
+    }
     int sum = 0;
     for (int i = 0; i < result.size(); i++)
     {
