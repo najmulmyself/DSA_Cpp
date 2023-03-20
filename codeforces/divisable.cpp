@@ -19,15 +19,23 @@ vector<int> Solved(int n, vector<int> a, vector<int> b)
 
         else
         {
-            int count = 0;
-            while (a[i] % b[i] != 0)
-            {
-                // cout << a[i] << "\t" << count << endl;
-                a[i]++;
-                count++;
-            }
+            // int count = 0;
+            // while (a[i] % b[i] != 0)
+            // {
+            //     // cout << a[i] << "\t" << count << endl;
+            //     a[i]++;
+            //     count++;
+            // }
 
-            final.push_back(count);
+
+        if(a[i]%b[i]!=0){
+            int d = a[i]/b[i] + 1;
+            int value = d * b[i] - a[i];
+
+            final.push_back(value);
+        }else{
+            final.push_back(0);
+        }
         }
     }
 

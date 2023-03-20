@@ -108,18 +108,23 @@ int main()
 {
 
     int n;
+    int x_level,y_level;
+
+
     vector<int> x;
     vector<int> y;
 
     cin >> n;
+    cin>>x_level;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < x_level; i++)
     {
         int temp;
         cin >> temp;
         x.push_back(temp);
     }
-    for (int i = 0; i < n -1; i++)
+    cin>>y_level;
+    for (int i = 0; i < y_level; i++)
     {
         int temp;
         cin >> temp;
@@ -130,9 +135,6 @@ int main()
     vector<int> sortedArr = merge_sort(finalMarge);
     vector<int> result = removeDuplicates(sortedArr);
 
-    for(int i =0;i<result.size();i++){
-        cout<<result[i];
-    }
     int sum = 0;
     for (int i = 0; i < result.size(); i++)
     {
@@ -153,4 +155,3 @@ int main()
     return 0;
 }
 
-//////////////////////////UNFINISHED/////////////////////////////////
