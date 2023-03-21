@@ -1,3 +1,4 @@
- // for(int i =0;i<result.size();i++){
-    //     cout<<result[i];
+    // for (int i = 0; i < perm.size(); i++)
+    // {
+    //     cout << perm[i] << " ";
     // }
