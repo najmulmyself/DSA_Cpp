@@ -69,7 +69,6 @@ public:
                 a = a->nxt; // if its not the previous node then go to the next node;
                 curr_index++;
             }
-            sz++; // maintaining size
             node * newNode = CreateNewNode(value); // init new node
             newNode->nxt = a->nxt; // if we find previous node, need to set previous node's nxt to new node;
             a->nxt = newNode; // and new node to previous
@@ -90,7 +89,10 @@ int main()
 
     l.insertAtAnyIndex(1,50);
     l.Traverse();
+    l.getSize();
     l.insertAtAnyIndex(0,22);
+    l.Traverse();
+    l.getSize();
     l.insertAtAnyIndex(1,60);
     l.Traverse();
     l.getSize();
