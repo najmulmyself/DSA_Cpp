@@ -113,6 +113,36 @@ public:
         // Ager ta jake refer kortesilo se ekhon delete hoye jabe so take dhorlam by this (node * b = a-> nxt),then tar nxt node ta hobe ager tar nxt node which is (a->nxt = b->nxt)
         delete b;
     }
+
+    void InsertAfterValue(int value, int data)
+    {
+        node *a = head;
+        while (a != NULL) // Traversing all the node
+        {
+            if (a->data == value) // checking specific node we want to inser after
+            {
+                break; // if it is the exact node , then break the condition , cause we found where after to put the node
+            }
+            a = a->nxt; // going to nxt node after knowing which node matches value
+        }
+
+        if (a == NULL)
+        {
+            return;
+        }
+        node *newNode = CreateNewNode(data);
+        // sz++; // no need to increase size here , bcz createnewNode will do it 
+        newNode->nxt = a->nxt;
+        a->nxt = newNode;
+    }
+
+    void ReversePrint(node * a){
+        if(a == NULL){
+            return;
+        }
+        ReversePrint(a->nxt);
+        cout<<a->data << " ";
+    }
 };
 
 int main()
@@ -138,8 +168,14 @@ int main()
     l.deleteAtHead();
     l.Traverse();
     l.getSize();
-    l.deleteAtAnyIndex(2);
+    // l.deleteAtAnyIndex(2);
     l.Traverse();
+    l.InsertAfterValue(10, 20);
+    l.Traverse();
+    l.InsertAfterValue(2,55);
+    l.Traverse();
+    l.getSize();
+    l.ReversePrint(l.head);
 
     return 0;
 }
