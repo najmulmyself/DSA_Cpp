@@ -52,8 +52,28 @@ public:
         }
         cout<<"\n";
     }
-    int getSize(){
-        return sz;
+    void getSize(){
+        cout << sz << endl;
+    }
+
+    void InsertAtAnyIndex(int index,int value){
+        if(index == 0){
+            InsertAtHead(value);
+            return;
+        }
+        node *a = head;
+        int curr_index = 0;
+        while(curr_index != index -1){
+            a = a->nxt;
+            curr_index++;
+        }
+        node * newNode = CreateNewNode(value);
+        newNode->nxt = a->nxt;
+        newNode->prv = a;
+        node * b = a->nxt;
+        b->prv = newNode;
+        a->nxt = newNode;
+        sz++;
     }
 };
 
@@ -63,6 +83,10 @@ int main()
     dl.InsertAtHead(10);
     dl.InsertAtHead(55);
     dl.InsertAtHead(20);
+    dl.Traverse();
+    dl.getSize();
+    dl.InsertAtAnyIndex(1,22);
+    dl.InsertAtHead(49);
     dl.Traverse();
     dl.getSize();
     return 0;
