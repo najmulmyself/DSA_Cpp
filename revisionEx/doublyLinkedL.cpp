@@ -165,23 +165,33 @@ public:
         {
             a = a->nxt;
         }
-        node * prvNode;
-        node * nxtNode;
-        if (a->prv != NULL)
+        node *prvNode = a->prv;
+        node *nxtNode = a->nxt;
+        // if (a->prv != NULL)
+        // {
+        //     prvNode = a->prv;
+        // prvNode->nxt = a->nxt;
+        // }else{
+        //     nxtNode = a->nxt;
+        //     // nxtNode->prv = NULL;
+        //     head = nxtNode;
+        // }
+        // if (a->nxt != NULL)
+        // {
+        //     nxtNode = a->nxt;
+        // nxtNode->prv = a->prv;
+        // }else{
+        //     prvNode = a->prv;
+        //     prvNode->nxt == NULL;
+        // }
+
+        if (prvNode != NULL)
         {
-            prvNode = a->prv;
-        prvNode->nxt = a->nxt;
-        }else{
-            nxtNode = a->nxt;
-            nxtNode->prv = NULL;
+            prvNode->nxt= nxtNode;
         }
-        if (a->nxt != NULL)
+        if (nxtNode != NULL)
         {
-            nxtNode = a->nxt;
-        nxtNode->prv = a->prv;
-        }else{
-            prvNode = a->prv;
-            prvNode->nxt == NULL;
+            nxtNode->prv = prvNode;
         }
 
 
