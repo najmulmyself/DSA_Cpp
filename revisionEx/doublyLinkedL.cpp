@@ -155,10 +155,10 @@ public:
     void deleteZero()
     {
 
-        if (head == NULL)
-        {
-            return;
-        }
+        // if (head == NULL)
+        // {
+        //     return;
+        // }
         node *a = head;
         //  node *a = head;
         while (a->data != 0)
@@ -167,35 +167,29 @@ public:
         }
         node *prvNode = a->prv;
         node *nxtNode = a->nxt;
-        // if (a->prv != NULL)
-        // {
-        //     prvNode = a->prv;
-        // prvNode->nxt = a->nxt;
-        // }else{
-        //     nxtNode = a->nxt;
-        //     // nxtNode->prv = NULL;
-        //     head = nxtNode;
-        // }
-        // if (a->nxt != NULL)
-        // {
-        //     nxtNode = a->nxt;
-        // nxtNode->prv = a->prv;
-        // }else{
-        //     prvNode = a->prv;
-        //     prvNode->nxt == NULL;
-        // }
 
         if (prvNode != NULL)
         {
-            prvNode->nxt= nxtNode;
+            prvNode->nxt = nxtNode;
         }
+        else
+        {// if first item contains 0
+            head = nxtNode;
+            delete a;
+
+            node *a = head;
+        }
+
         if (nxtNode != NULL)
         {
             nxtNode->prv = prvNode;
+        }else{ // if last item contains 0
+            delete a;
+            return;
         }
 
-
         delete a;
+
         if (nxtNode->nxt != NULL)
         {
             deleteZero();
@@ -218,6 +212,7 @@ int main()
 
     dl.Traverse();
     dl.Insert(2, 100);
+    dl.InsertAtHead(0);
 
     dl.Traverse();
 
