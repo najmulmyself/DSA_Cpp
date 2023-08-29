@@ -152,15 +152,11 @@ public:
         head = a;
     }
 
-    void deleteZero()
+ void deleteZero()
     {
 
-        // if (head == NULL)
-        // {
-        //     return;
-        // }
+        
         node *a = head;
-        //  node *a = head;
         while (a->data != 0)
         {
             a = a->nxt;
@@ -198,6 +194,28 @@ public:
     // changed function name because  previously used this name
     void swapIndex(int i, int j)
     {
+
+        if (i == j) {
+            return; // No need to swap elements at the same index
+        }
+        node * iNode = head;
+        int currentIndex = 0;
+        while (currentIndex != i && iNode != NULL)
+        {
+            iNode = iNode->nxt;
+            currentIndex++;
+        }
+        node * jNode = head;
+        
+        currentIndex = 0;
+        while (currentIndex != j && jNode != NULL)
+        {
+            jNode = jNode->nxt;
+            currentIndex++;
+        }
+        int tempData = iNode->data;
+        iNode->data = jNode->data;
+        jNode->data = tempData;
     }
 };
 
@@ -205,14 +223,13 @@ int main()
 {
     DoublyLinkedList dl;
     dl.InsertAtHead(0);
-    dl.InsertAtHead(10);
-    dl.InsertAtHead(5);
+    dl.InsertAtHead(2);
+    dl.InsertAtHead(6);
     dl.InsertAtHead(0);
-    dl.InsertAtHead(1);
+    dl.InsertAtHead(7);
 
     dl.Traverse();
-    dl.Insert(2, 100);
-    dl.InsertAtHead(0);
+    // dl.Insert(2, 100);
 
     dl.Traverse();
 
@@ -220,8 +237,8 @@ int main()
     dl.Traverse();
     dl.deleteZero();
     dl.Traverse();
-    // dl.deleteZero();
-    // dl.Traverse();
+    dl.swapIndex(1,4);
+    dl.Traverse();
 
     return 0;
 }
